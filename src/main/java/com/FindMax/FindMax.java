@@ -20,6 +20,12 @@ public class FindMax<E extends Comparable<E>> {
 		return max;
 	}
 
+	// uc4 - to take variable arguments and use arrays.sort method for find maximum
+	public void printMax() {
+		System.out.println("Maximum is : " + maximum());
+	}
+
+	// uc5 - to print maximum
 	public static void main(String[] args) {
 		System.out.println("Welcome to Find Maximum program!!");
 		System.out.println("---------------------------------");
@@ -41,7 +47,7 @@ public class FindMax<E extends Comparable<E>> {
 				Integer d = Integer.parseInt(sc.nextLine());
 				FindMax<Integer> obj = new FindMax<Integer>();
 				obj.findMaximum(a, b, c, d);
-				System.out.println("Maximum is :" + obj.maximum());
+				obj.printMax();
 				break;
 			case 2:
 				System.out.print("Enter first Float integer: ");
@@ -56,7 +62,7 @@ public class FindMax<E extends Comparable<E>> {
 				Float v = Float.parseFloat(sc.nextLine());
 				FindMax<Float> obj2 = new FindMax<Float>();
 				obj2.findMaximum(x, y, z, w, v);
-				System.out.println("Maximum is :" + obj2.maximum());
+				obj2.printMax();
 				break;
 			case 3:
 				System.out.print("Enter first String: ");
@@ -73,7 +79,7 @@ public class FindMax<E extends Comparable<E>> {
 				String n = sc.nextLine();
 				FindMax<String> obj3 = new FindMax<String>();
 				obj3.findMaximum(i, j, k, l, m, n);
-				System.out.println("Maximum is :" + obj3.maximum());
+				obj3.printMax();
 				break;
 			}
 			System.out.println("Do you wish to continue?(y/n)");

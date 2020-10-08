@@ -13,6 +13,7 @@ public class FindMaxTest {
 		FindMax<Integer> Obj = new FindMax<Integer>();
 		Obj.findMaximum(9, 6, 2);
 		assertEquals(9, (int) Obj.maximum());
+		Obj.printMax();
 	}
 
 	@Test
@@ -20,6 +21,7 @@ public class FindMaxTest {
 		FindMax<Integer> Obj = new FindMax<Integer>();
 		Obj.findMaximum(6, 9, 2);
 		assertEquals(9, (int) Obj.maximum());
+		Obj.printMax();
 	}
 
 	@Test
@@ -27,6 +29,7 @@ public class FindMaxTest {
 		FindMax<Integer> Obj = new FindMax<Integer>();
 		Obj.findMaximum(6, 2, 9);
 		assertEquals(9, (int) Obj.maximum());
+		Obj.printMax();
 	}
 
 	@Test
@@ -34,14 +37,16 @@ public class FindMaxTest {
 		FindMax<Integer> Obj = new FindMax<Integer>();
 		Obj.findMaximum(2, 6, 7, 9);
 		assertEquals(9, (int) Obj.maximum());
+		Obj.printMax();
 	}
 
 	// teset casess for integer
 	@Test
 	public void FloatMaxAtPositionOne_ReturnSameNumber() {
-		FindMax<Float> findMaxObj = new FindMax<Float>();
-		findMaxObj.findMaximum(9.9f, 6.6f, 2.2f);
-		assertEquals(9.9f, (float) findMaxObj.maximum(), 0.0f);
+		FindMax<Float> Obj = new FindMax<Float>();
+		Obj.findMaximum(9.9f, 6.6f, 2.2f);
+		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
+		Obj.printMax();
 	}
 
 	@Test
@@ -49,6 +54,7 @@ public class FindMaxTest {
 		FindMax<Float> Obj = new FindMax<Float>();
 		Obj.findMaximum(6.6f, 9.9f, 2.2f);
 		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
+		Obj.printMax();
 	}
 
 	@Test
@@ -56,6 +62,7 @@ public class FindMaxTest {
 		FindMax<Float> Obj = new FindMax<Float>();
 		Obj.findMaximum(6.6f, 2.2f, 9.9f);
 		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
+		Obj.printMax();
 	}
 
 	@Test
@@ -63,14 +70,16 @@ public class FindMaxTest {
 		FindMax<Float> Obj = new FindMax<Float>();
 		Obj.findMaximum(2.2f, 6.6f, 7.7f, 3.3f, 9.9f);
 		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
+		Obj.printMax();
 	}
 
-	//test cases for float integer
+	// test cases for float integer
 	@Test
 	public void StringMaxAtPositionoOne_ReturnSameString() {
 		FindMax<String> Obj = new FindMax<String>();
 		Obj.findMaximum("Peach", "Apple", "Banana");
 		assertEquals("Peach", Obj.maximum());
+		Obj.printMax();
 	}
 
 	@Test
@@ -78,6 +87,7 @@ public class FindMaxTest {
 		FindMax<String> Obj = new FindMax<String>();
 		Obj.findMaximum("Apple", "Peach", "Banana");
 		assertEquals("Peach", Obj.maximum());
+		Obj.printMax();
 	}
 
 	@Test
@@ -85,6 +95,7 @@ public class FindMaxTest {
 		FindMax<String> Obj = new FindMax<String>();
 		Obj.findMaximum("Apple", "Banana", "Peach");
 		assertEquals("Peach", Obj.maximum());
+		Obj.printMax();
 	}
 
 	@Test
@@ -92,6 +103,7 @@ public class FindMaxTest {
 		FindMax<String> Obj = new FindMax<String>();
 		Obj.findMaximum("Apple", "Banana", "Peach", "Ball", "Cat", "Bat");
 		assertEquals("Peach", Obj.maximum());
+		Obj.printMax();
 	}
 	// test cases for strings
 }
