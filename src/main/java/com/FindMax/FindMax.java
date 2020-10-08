@@ -2,12 +2,12 @@ package com.FindMax;
 
 import java.util.*;
 
-//Master branch - welcome message
+//UC2 - given 3 float find maximum
 public class FindMax {
 
 	public static Scanner sc;
 
-	public static Integer Maximum(Integer a, Integer b, Integer c) {
+	public static Float Maximum(Float a, Float b, Float c) {
 		int x = a.compareTo(b);
 		int y = b.compareTo(c);
 		int z = c.compareTo(a);
@@ -24,7 +24,7 @@ public class FindMax {
 		else if (x == 1 && y == -1 && z == 1)
 			return c;
 		else
-			return 0;
+			return 0.0f;
 
 	}
 
@@ -32,13 +32,13 @@ public class FindMax {
 		System.out.println("Welcome to Find Maximum program!!");
 		System.out.println("---------------------------------");
 		sc = new Scanner(System.in);
-		System.out.print("Enter first integer: ");
-		Integer a = Integer.parseInt(sc.nextLine());
-		System.out.print("Enter second integer: ");
-		Integer b = Integer.parseInt(sc.nextLine());
-		System.out.print("Enter third integer: ");
-		Integer c = Integer.parseInt(sc.nextLine());
-		Integer max = Maximum(a, b, c);
+		System.out.print("Enter first Float integer: ");
+		Float a = Float.parseFloat(sc.nextLine());
+		System.out.print("Enter second Float integer: ");
+		Float b = Float.parseFloat(sc.nextLine());
+		System.out.print("Enter third Float integer: ");
+		Float c = Float.parseFloat(sc.nextLine());
+		Float max = Maximum(a, b, c);
 		System.out.println("Maximum is :" + max);
 	}
 }
