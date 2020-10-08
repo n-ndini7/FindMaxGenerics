@@ -3,10 +3,20 @@ package com.FindMax;
 import java.util.*;
 
 //UC4 - refactor all the previous 3 ucs to one generic method
-public class FindMax {
+public class FindMax <E extends Comparable<E>> {
 
 	public static Scanner sc;
-
+	E x, y, z;
+	E max;
+	
+	public FindMax(E x, E y, E z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	public E Maximum() {
+		return this.Maximum(x, y, z);
+	}
 	public static <E extends Comparable<E>> E Maximum(E a, E b, E c) {
 		E max = a;
 		if (b.compareTo(max) > 0)
