@@ -8,74 +8,90 @@ import com.FindMax.FindMax;
 
 public class FindMaxTest {
 
-	FindMax obj;
-
 	@Test
-	public void StringMaxAtPositionOne_ReturnSameNumber() {
-		obj = new FindMax<String>("Peach", "Apple", "Banana");
-		obj.Maximum();
-		assertEquals("Peach", obj.Maximum());
-	}
-
-	@Test
-	public void StringMaxAtPositionTwo_ReturnSameNumber() {
-		obj = new FindMax<String>("Apple", "Peach", "Banana");
-		obj.Maximum();
-		assertEquals("Peach", obj.Maximum());
-	}
-
-	@Test
-	public void StringMaxAtPositionThree_ReturnSameNumber() {
-		obj = new FindMax<String>("Apple", "Banana", "Peach");
-		obj.Maximum();
-		assertEquals("Peach", obj.Maximum());
-	}
-
-	// test cases for string
-	public void IntegerMaxAtPositionOne_ReturnSameNumber() {
-		obj = new FindMax<Integer>(9, 6, 2);
-		obj.Maximum();
-		assertEquals(9, obj.Maximum());
+	public void MaxIntegerAtPositionOne_ReturnSameNumber() {
+		FindMax<Integer> Obj = new FindMax<Integer>();
+		Obj.findMaximum(9, 6, 2);
+		assertEquals(9, (int) Obj.maximum());
 	}
 
 	@Test
 	public void IntegerMaxAtPositionTwo_ReturnSameNumber() {
-		obj = new FindMax<Integer>(6, 9, 2);
-		obj.Maximum();
-		assertEquals(9, obj.Maximum());
+		FindMax<Integer> Obj = new FindMax<Integer>();
+		Obj.findMaximum(6, 9, 2);
+		assertEquals(9, (int) Obj.maximum());
 	}
 
 	@Test
 	public void IntegerMaxAtPositionThree_ReturnSameNumber() {
-		obj = new FindMax<Integer>(6, 2, 9);
-		obj.Maximum();
-		assertEquals(9, obj.Maximum());
-
+		FindMax<Integer> Obj = new FindMax<Integer>();
+		Obj.findMaximum(6, 2, 9);
+		assertEquals(9, (int) Obj.maximum());
 	}
-	// test cases for integer
 
 	@Test
-	public void FloatMaxAtPositionOne_ReturnSameNumber() {
-		obj = new FindMax<Float>(9.9f, 6.6f, 2.2f);
-		obj.Maximum();
-		assertEquals(9.9f, obj.Maximum());
+	public void VariableArgs_ReturnCorrectMax() {
+		FindMax<Integer> Obj = new FindMax<Integer>();
+		Obj.findMaximum(2, 6, 7, 9);
+		assertEquals(9, (int) Obj.maximum());
+	}
 
+	// teset casess for integer
+	@Test
+	public void FloatMaxAtPositionOne_ReturnSameNumber() {
+		FindMax<Float> findMaxObj = new FindMax<Float>();
+		findMaxObj.findMaximum(9.9f, 6.6f, 2.2f);
+		assertEquals(9.9f, (float) findMaxObj.maximum(), 0.0f);
 	}
 
 	@Test
 	public void FloatMaxAtPositionTwo_ReturnSameNumber() {
-		obj = new FindMax<Float>(6.6f, 9.9f, 2.2f);
-		obj.Maximum();
-		assertEquals(9.9f, obj.Maximum());
+		FindMax<Float> Obj = new FindMax<Float>();
+		Obj.findMaximum(6.6f, 9.9f, 2.2f);
+		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
 	}
 
 	@Test
 	public void FloatMaxAtPositionThree_ReturnSameNumber() {
-		obj = new FindMax<Float>(6.6f, 2.2f, 9.9f);
-		obj.Maximum();
-		assertEquals(9.9f, obj.Maximum());
-
+		FindMax<Float> Obj = new FindMax<Float>();
+		Obj.findMaximum(6.6f, 2.2f, 9.9f);
+		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
 	}
-	// test cases for float
 
+	@Test
+	public void VariableFloatArgs_ReturnCorrectMax() {
+		FindMax<Float> Obj = new FindMax<Float>();
+		Obj.findMaximum(2.2f, 6.6f, 7.7f, 3.3f, 9.9f);
+		assertEquals(9.9f, (float) Obj.maximum(), 0.0f);
+	}
+
+	//test cases for float integer
+	@Test
+	public void StringMaxAtPositionoOne_ReturnSameString() {
+		FindMax<String> Obj = new FindMax<String>();
+		Obj.findMaximum("Peach", "Apple", "Banana");
+		assertEquals("Peach", Obj.maximum());
+	}
+
+	@Test
+	public void StringMaxAtPositionTwo_ReturnSameString() {
+		FindMax<String> Obj = new FindMax<String>();
+		Obj.findMaximum("Apple", "Peach", "Banana");
+		assertEquals("Peach", Obj.maximum());
+	}
+
+	@Test
+	public void StringMaxAtPositionThree_ReturnSameString() {
+		FindMax<String> Obj = new FindMax<String>();
+		Obj.findMaximum("Apple", "Banana", "Peach");
+		assertEquals("Peach", Obj.maximum());
+	}
+
+	@Test
+	public void VariableStringArgs_ReturnCorrectMax() {
+		FindMax<String> Obj = new FindMax<String>();
+		Obj.findMaximum("Apple", "Banana", "Peach", "Ball", "Cat", "Bat");
+		assertEquals("Peach", Obj.maximum());
+	}
+	// test cases for strings
 }

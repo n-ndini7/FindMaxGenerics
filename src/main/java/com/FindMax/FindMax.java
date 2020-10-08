@@ -2,29 +2,22 @@ package com.FindMax;
 
 import java.util.*;
 
-//UC4 - refactor all the previous 3 ucs to one generic method
-public class FindMax <E extends Comparable<E>> {
-
+//UC4 - Extend the max method to take more than 3 parameters
+public class FindMax<E extends Comparable<E>> {
 	public static Scanner sc;
-	E x, y, z;
 	E max;
-	
-	public FindMax(E x, E y, E z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
-	public E Maximum() {
-		return this.Maximum(x, y, z);
-	}
-	public static <E extends Comparable<E>> E Maximum(E a, E b, E c) {
-		E max = a;
-		if (b.compareTo(max) > 0)
-			max = b;
-		if (c.compareTo(max) > 0)
-			max = c;
-		return max;
 
+	public FindMax() {
+	}
+
+	public E maximum() {
+		return this.max;
+	}
+
+	public E findMaximum(E... args) {
+		Arrays.sort(args);
+		this.max = args[args.length - 1];
+		return max;
 	}
 
 	public static void main(String[] args) {
@@ -44,8 +37,11 @@ public class FindMax <E extends Comparable<E>> {
 				Integer b = Integer.parseInt(sc.nextLine());
 				System.out.print("Enter third integer: ");
 				Integer c = Integer.parseInt(sc.nextLine());
-				Integer max = Maximum(a, b, c);
-				System.out.println("Maximum is :" + max);
+				System.out.print("Enter fourth integer: ");
+				Integer d = Integer.parseInt(sc.nextLine());
+				FindMax<Integer> obj = new FindMax<Integer>();
+				obj.findMaximum(a, b, c, d);
+				System.out.println("Maximum is :" + obj.maximum());
 				break;
 			case 2:
 				System.out.print("Enter first Float integer: ");
@@ -54,8 +50,13 @@ public class FindMax <E extends Comparable<E>> {
 				Float y = Float.parseFloat(sc.nextLine());
 				System.out.print("Enter third Float integer: ");
 				Float z = Float.parseFloat(sc.nextLine());
-				Float m = Maximum(x, y, z);
-				System.out.println("Maximum is :" + m);
+				System.out.print("Enter fourth Float integer: ");
+				Float w = Float.parseFloat(sc.nextLine());
+				System.out.print("Enter fifth Float integer: ");
+				Float v = Float.parseFloat(sc.nextLine());
+				FindMax<Float> obj2 = new FindMax<Float>();
+				obj2.findMaximum(x, y, z, w, v);
+				System.out.println("Maximum is :" + obj2.maximum());
 				break;
 			case 3:
 				System.out.print("Enter first String: ");
@@ -64,7 +65,15 @@ public class FindMax <E extends Comparable<E>> {
 				String j = sc.nextLine();
 				System.out.print("Enter third String: ");
 				String k = sc.nextLine();
-				System.out.println("Maximum is :" + Maximum(i, j, k));
+				System.out.print("Enter fourth String: ");
+				String l = sc.nextLine();
+				System.out.print("Enter fifth String: ");
+				String m = sc.nextLine();
+				System.out.print("Enter sixth String: ");
+				String n = sc.nextLine();
+				FindMax<String> obj3 = new FindMax<String>();
+				obj3.findMaximum(i, j, k, l, m, n);
+				System.out.println("Maximum is :" + obj3.maximum());
 				break;
 			}
 			System.out.println("Do you wish to continue?(y/n)");
